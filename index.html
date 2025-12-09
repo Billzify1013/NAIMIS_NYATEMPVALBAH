@@ -24,7 +24,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h m-1" href="index.html"><img src="image/mainlogo1.png" height="80px" alt=""></a>
+                    <a class="navbar-brand logo_h m-1" href="index.html"><img src="image/Naimisharanya (3).png" height="80px" alt="">
+                    <img src="image/mainlogo1.png" height="80px" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -37,21 +38,295 @@
                             <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
                             <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                            <!-- <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                </ul>
-                            </li>  -->
+                            
                             <!-- <li class="nav-item"><a class="nav-link" href="elements.html">Elemests</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">langauge</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">English </a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Telgu</a></li>
+                                </ul>
+                            </li>  
                         </ul>
                     </div> 
                 </nav>
             </div>
         </header>
         <!--================Header Area =================-->
+
+        <!-- SEARCH AVAILABILITY SECTION (FULL BLOCK) -->
+<style>
+    /* Laptop pe thoda upar, mobile pe mt-4 ok */
+    @media (min-width: 992px) {
+        .search-section {
+            margin-top: 1.5rem !important;
+        }
+    }
+
+    /* Card look: white box with nice shadow */
+    .search-card {
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        background: #ffffff;
+    }
+
+    /* CITY AREA UI */
+    .city-wrapper {
+        margin-bottom: 1.25rem;
+    }
+
+    .city-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .city-input {
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        padding: 0.65rem 1rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    .city-icon {
+        color: #000;
+        font-size: 1rem;
+    }
+
+    .city-text {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Inputs */
+    .form-control,
+    .form-select {
+        border-radius: 8px !important;
+        color: #000;
+    }
+
+    /* Nights text */
+    .nights-text,
+    #nightCount {
+        font-weight: 600;
+        color: #000 !important;
+    }
+
+    /* Quick date buttons */
+    .quick-date-group {
+        gap: 10px; /* Today / Tomorrow ke beech distance */
+    }
+
+    .quick-date-group .btn {
+        border-radius: 8px !important;
+        color: #000 !important;
+        border-color: #bbb;
+        background-color: #fff;
+    }
+
+    .quick-date-group .btn:hover {
+        background: #e9e9e9;
+    }
+
+    /* Black Search Button - center + clean */
+    .btn-search-main {
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        font-weight: 600;
+        border: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.7rem 2.7rem;
+    }
+
+    .btn-search-main:hover,
+    .btn-search-main:focus {
+        background: #111;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    }
+
+    @media (max-width: 767.98px) {
+        .btn-search-main {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="section_gap search-section mt-4">
+    <div class="container">
+        <div class="section_title">
+            <h2 class="title_color">Search Availability</h2>
+        </div>
+
+        <div class="card shadow-sm border-0 search-card">
+            <div class="card-body">
+                <form id="availabilityForm">
+                    <!-- CITY / AREA -->
+                    <div class="city-wrapper mb-4">
+                        <label class="form-label city-label">City / Area</label>
+                        <div class="city-input">
+                            <i class="fa fa-map-marker-alt me-2 city-icon"></i>
+                            <span class="city-text">
+                                Naimisharanya, Vyas Gaddi Mandir
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- ONE LINE: CHECKIN, CHECKOUT, ROOMS, ADULTS -->
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12 col-md-3">
+                            <label for="checkinDate" class="form-label mb-1">Check-in</label>
+                            <input type="date" class="form-control" id="checkinDate">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="checkoutDate" class="form-label mb-1">Check-out</label>
+                            <input type="date" class="form-control" id="checkoutDate">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="rooms" class="form-label mb-1">Rooms</label>
+                            <select class="form-select" id="rooms">
+                                <option value="1">1 Room</option>
+                                <option value="2">2 Rooms</option>
+                                <option value="3">3 Rooms</option>
+                                <option value="4">4 Rooms</option>
+                                <option value="5">5 Rooms</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="adults" class="form-label mb-1">Adults</label>
+                            <select class="form-select" id="adults">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5 Adults</option>
+                                <option value="6">6 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- NIGHTS + TODAY / TOMORROW -->
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
+                        <div class="nights-text">
+                            <span id="nightCount">0</span> Night(s)
+                        </div>
+                        <div class="btn-group quick-date-group">
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnToday">
+                                Today
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnTomorrow">
+                                Tomorrow
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH BUTTON CENTER -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-lg btn-search-main px-4">
+                            <i class="fa fa-search me-2"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const checkinInput  = document.getElementById("checkinDate");
+    const checkoutInput = document.getElementById("checkoutDate");
+    const nightCountEl  = document.getElementById("nightCount");
+    const btnToday      = document.getElementById("btnToday");
+    const btnTomorrow   = document.getElementById("btnTomorrow");
+
+    // helper: Date -> yyyy-mm-dd
+    function toInputDate(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}-${m}-${d}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date.getTime());
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    // min date = today
+    const today = new Date();
+    const minDate = toInputDate(today);
+    checkinInput.min  = minDate;
+    checkoutInput.min = minDate;
+
+    // nights calc
+    function updateNights() {
+        if (!checkinInput.value || !checkoutInput.value) {
+            nightCountEl.textContent = "0";
+            return;
+        }
+        const ci = new Date(checkinInput.value);
+        const co = new Date(checkoutInput.value);
+        const diffMs = co - ci;
+        const nights = diffMs / (1000 * 60 * 60 * 24);
+        nightCountEl.textContent = nights > 0 ? nights : 0;
+    }
+
+    // jase hi check-in dale, checkout auto +1 day
+    checkinInput.addEventListener("change", function () {
+        if (checkinInput.value) {
+            const ci = new Date(checkinInput.value);
+            const co = addDays(ci, 1);                 // always +1 day
+            checkoutInput.value = toInputDate(co);
+            checkoutInput.min   = checkinInput.value;  // cannot go backward
+        } else {
+            checkoutInput.value = "";
+            checkoutInput.min   = minDate;
+        }
+        updateNights();
+    });
+
+    checkoutInput.addEventListener("change", updateNights);
+
+    // TODAY: checkin = today, checkout = today+1
+    btnToday.addEventListener("click", function () {
+        const t1 = new Date();
+        const t2 = addDays(t1, 1);
+
+        checkinInput.value  = toInputDate(t1);
+        checkoutInput.value = toInputDate(t2);
+        checkoutInput.min   = checkinInput.value;
+        updateNights();
+    });
+
+    // TOMORROW: checkin = tomorrow, checkout = tomorrow+1
+    btnTomorrow.addEventListener("click", function () {
+        const t1 = addDays(new Date(), 1); // tomorrow
+        const t2 = addDays(t1, 1);         // day after tomorrow
+
+        checkinInput.value  = toInputDate(t1);
+        checkoutInput.value = toInputDate(t2);
+        checkoutInput.min   = checkinInput.value;
+        updateNights();
+    });
+});
+</script>
+
         
         <!--================Banner Area =================-->
         <section class="banner_area">
