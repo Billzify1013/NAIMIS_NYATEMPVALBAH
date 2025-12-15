@@ -166,13 +166,13 @@
     }
 </style>
 
-<section class="section_gap search-section mt-4">
+<section class="section_gap search-section">
     <div class="container">
         <div class="section_title">
-            <h2 class="title_color">Search Availability</h2>
+            <h2 class="title_color mt-4 ms-md-0">Search Availability</h2>
         </div>
 
-        <div class="card shadow-sm border-0 search-card">
+        <div class="card shadow-sm border-0 search-card " style="margin-top: -45px;">
             <div class="card-body">
                 <form id="availabilityForm">
                     <!-- CITY / AREA -->
@@ -239,7 +239,11 @@
                         <button type="submit" class="btn btn-lg btn-search-main px-4">
                             <i class="fa fa-search me-2"></i> Search
                         </button>
+                        <button type="submit" class="btn btn-lg btn-search-main px-4 mt-2 mt-md-0">
+                            <i class="fa fa-phone me-2"></i> Call
+                        </button>
                     </div>
+                    
                 </form>
             </div>
         </div>
@@ -327,9 +331,423 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-        
-        <!--================Banner Area =================-->
-        <section class="banner_area">
+
+
+<!--carosual area-->
+<!-- ========== FULL CUSTOM CAROUSEL + HOTEL CARD ========== -->
+
+<style>
+/* WRAPPER */
+.hotel-card {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* CAROUSEL */
+.hotel-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.hotel-carousel img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 400px; /* DESKTOP HEIGHT */
+}
+
+/* MOBILE SMALLER HEIGHT */
+@media (max-width: 576px) {
+    .hotel-carousel img {
+        height: 260px;
+    }
+}
+
+/* Slides */
+.hotel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.hotel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Prev/Next Buttons */
+.hotel-carousel-prev,
+.hotel-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.hotel-carousel-prev { left: 10px; }
+.hotel-carousel-next { right: 10px; }
+
+/* Dots */
+.hotel-carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.hotel-carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.hotel-carousel-dots .dot.active {
+    background: #fff;
+}
+
+/* HOTEL INFO */
+.hotel-info {
+    background: #2f2f2f;
+    padding: 14px 16px;
+}
+
+.hotel-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* LOCATION + PHONE IN SAME ROW */
+.hotel-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Both columns EXACT 50% */
+.hotel-info-col {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Icons */
+.hotel-icon {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
+/* Text */
+.hotel-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+</style>
+
+<!-- ========== HTML ========== -->
+
+<div class="hotel-card">
+
+    <!-- CAROUSEL -->
+    <div class="hotel-carousel">
+        <div class="hotel-slide active">
+            <img src="image/1.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/2.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/6.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/9.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/3.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/4.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/5.jpeg" alt="">
+        </div>
+         <div class="hotel-slide">
+            <img src="image/8.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/10.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/11.jpeg" alt="">
+        </div>
+
+        <!-- Prev / Next -->
+        <div class="hotel-carousel-prev">&#10094;</div>
+        <div class="hotel-carousel-next">&#10095;</div>
+
+        <!-- Dots -->
+        <div class="hotel-carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+
+    
+    <!-- HOTEL INFO -->
+    <div class="hotel-info">
+        <div class="container">
+        <div class="hotel-title">Hotel Vallabh Palace, Naimisharanya</div>
+
+        <div class="hotel-info-row">
+
+            <!-- Location -->
+            <div class="hotel-info-col">
+                <div class="hotel-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="hotel-text">
+                    169, Near Vyas Gaddi Mandir,<br>
+                    Naimisharanya, Uttar Pradesh, India 261402
+                </div>
+            </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+            <!-- Phone -->
+            <div class="hotel-info-col">
+                <div class="hotel-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="hotel-text">+91-542-2510000</div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<!-- ========== JS ========== -->
+
+<script>
+(function() {
+    const slides = document.querySelectorAll('.hotel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.hotel-carousel-prev');
+    const nextBtn = document.querySelector('.hotel-carousel-next');
+
+    let currentIndex = 0;
+    let timer = null;
+    const interval = 3000;
+
+    function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === index));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
+    }
+
+    function prevSlideFn() {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        showSlide(newIndex);
+    }
+
+    function startAuto() {
+        stopAuto();
+        timer = setInterval(nextSlide, interval);
+    }
+
+    function stopAuto() {
+        if (timer) clearInterval(timer);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAuto();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlideFn();
+        startAuto();
+    });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            showSlide(parseInt(this.getAttribute('data-index')));
+            startAuto();
+        });
+    });
+
+    showSlide(0);
+    startAuto();
+})();
+</script>
+
+
+
+<!--CAROSUAL AREAS END-->
+
+
+
+
+<!--service design start-->
+
+<style>
+.amenities-box {
+    background: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.amenity-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.amenity-item {
+    width: 48%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.amenity-icon {
+    font-size: 20px;
+}
+
+.amenity-links {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.amenity-links span {
+    color: #d4145a;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.amenity-links .divider {
+    color: #aaa;
+    margin: 0 14px;
+}
+
+/* Bottom line */
+.section-line {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Check-in/out */
+.check-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.check-item {
+    width: 48%;
+}
+
+.check-label {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.check-value {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+</style>
+<div class="container">
+<div class="amenities-box mt-3">
+    <h4 class="mb-4">Featured Amenities</h4>
+
+    <!-- Amenity Rows -->
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-elevator"></i></div>
+            <div>Elevator</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div>
+            <div>High Speed Internet</div>
+        </div>
+    </div>
+
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+            <div>In City Center</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-taxi"></i></div>
+            <div>Pick & Drop</div>
+        </div>
+    </div>
+
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-gopuram"></i></div>
+            <div>Pravachan Hall</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div>
+            <div>Onsite Parking</div>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="amenity-links">
+        <span>All Amenities</span>
+        <span class="divider">|</span>
+        <span>Hotel Policies</span>
+    </div>
+
+    <div class="section-line"></div>
+
+    <!-- Check-in / Check-out -->
+    <div class="check-box">
+        <div class="check-item">
+            <div class="check-label center">CHECK IN</div>
+            <div class="check-value">12:00 pm</div>
+        </div>
+        <div class="check-item">
+            <div class="check-label ms-5">CHECK OUT</div>
+            <div class="check-value">11:00 am</div>
+        </div>
+    </div>
+
+</div></div>
+
+
+<!--service design end-->
+
+        <!-- ================Banner Area ================= -->
+        <!-- <section class="banner_area">
             <div class="booking_table d_flex align-items-center">
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
@@ -342,7 +760,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				</div>
             </div>
            
-        </section>
+        </section> -->
         <!--================Banner Area =================-->
         
         <!--================ Accomodation Area  =================-->
@@ -356,21 +774,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="col-lg-4 col-md-6" >
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
-                                <img src="image/deluxeroms.jpeg" alt="" height="270px">
+                                <img src="image/999room.jpeg" alt="" height="270px">
                                 <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a href="#"><h4 class="sec_h4 "> Deluxe Room</h4></a>
-                            <h5 class="text-dark">Starts 1500<small>/night</small></h5>
+                            <a href="#"><h4 class="sec_h4">1 Twin Bed Room </h4></a>
+                            <h5 class="text-dark">Starts 1500<small> INR/night</small></h5>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
-                                <img src="image/spd.jpeg" alt="" height="270px" >
+                                <img src="image/1200room1.jpeg" alt="" height="270px" >
                                 <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a href="#"><h4 class="sec_h4 ">Super Deluxe Room</h4></a>
-                            <h5 class="text-dark" >Starts 1800<small>/night</small></h5>
+                            <a href="#"><h4 class="sec_h4 ">1 Deluxe Room</h4></a>
+                            <h5 class="text-dark" >Starts 1200<small> INR/night</small></h5>
                         </div>
                     </div>
                     
@@ -390,7 +808,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <!--================ Accomodation Area  =================-->
         
         <!--================ Facilities Area  =================-->
-        <section class="facilities_area section_gap">
+        <!-- <section class="facilities_area section_gap">
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
             </div>
             <div class="container">
@@ -438,7 +856,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--================ Facilities Area  =================-->
         
         <!--================ About History Area  =================-->
@@ -745,7 +1163,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         
         
-        <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="btn btn-light chat-withusicon" style="height:55px;width:55px;border-radius:15px;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+        <!-- <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="btn btn-light chat-withusicon" style="height:55px;width:55px;border-radius:15px;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
             <p style="font-size:28px; display:inline-block; animation:wave 1.5s infinite, zoom 1.5s infinite;">
                 <i class="fa fa-whatsapp text-success"></i>
 
@@ -754,7 +1172,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         <a href="https://wa.me/message/2BS5P6OM4XR5H1" onclick="showchatnowbtn()" class="btn btn-light chat-withus" style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 90px; right: 20px; z-index: 999;">
             Chat  !
-        </a>
+        </a> -->
         
         <style>
             @keyframes wave {
