@@ -17,6 +17,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
     <body>
         <!--================Header Area =================-->
@@ -34,18 +35,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li> -->
-                            <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                            
-                            <!-- <li class="nav-item"><a class="nav-link" href="elements.html">Elemests</a></li> -->
-                            <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">langauge</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span class="lang-text">Language</span>
+                                </a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="#">English </a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Telugu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" onclick="switchLanguage('en'); return false;">English</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" onclick="switchLanguage('te'); return false;">తెలుగు</a></li>
                                 </ul>
                             </li>  
                         </ul>
@@ -169,7 +165,7 @@
 <section class="section_gap search-section">
     <div class="container">
         <div class="section_title">
-            <h2 class="title_color mt-4 ms-md-0">Search Availability</h2>
+            <h2 class="title_color mt-4 ms-md-0" data-en="Search Availability" data-te="అందుబాటులో ఉన్న రూమ్‌ల కోసం వెతకండి">Search Availability</h2>
         </div>
 
         <div class="card shadow-sm border-0 search-card " style="margin-top: -45px;">
@@ -177,10 +173,10 @@
                 <form id="availabilityForm">
                     <!-- CITY / AREA -->
                     <div class="city-wrapper mb-4">
-                        <label class="form-label city-label">City / Area</label>
+                        <label class="form-label city-label" data-en="City / Area" data-te="నగరం / ప్రాంతం">City / Area</label>
                         <div class="city-input">
                             <i class="fa fa-map-marker-alt me-2 city-icon"></i>
-                            <span class="city-text">
+                            <span class="city-text" data-en="Naimisharanya, Vyas Gaddi Mandir" data-te="నైమిషారణ్య, వ్యాస గద్ది మందిర్">
                                 Naimisharanya, Vyas Gaddi Mandir
                             </span>
                         </div>
@@ -189,32 +185,32 @@
                     <!-- ONE LINE: CHECKIN, CHECKOUT, ROOMS, ADULTS -->
                     <div class="row g-3 align-items-end">
                         <div class="col-12 col-md-3">
-                            <label for="checkinDate" class="form-label mb-1">Check-in</label>
+                            <label for="checkinDate" class="form-label mb-1" data-en="Check-in" data-te="చెక్-ఇన్">Check-in</label>
                             <input type="date" class="form-control" id="checkinDate">
                         </div>
                         <div class="col-12 col-md-3">
-                            <label for="checkoutDate" class="form-label mb-1">Check-out</label>
+                            <label for="checkoutDate" class="form-label mb-1" data-en="Check-out" data-te="చెక్-అవుట్">Check-out</label>
                             <input type="date" class="form-control" id="checkoutDate">
                         </div>
                         <div class="col-12 col-md-3">
-                            <label for="rooms" class="form-label mb-1">Rooms</label>
+                            <label for="rooms" class="form-label mb-1" data-en="Rooms" data-te="రూములు">Rooms</label>
                             <select class="form-select" id="rooms">
-                                <option value="1">1 Room</option>
-                                <option value="2">2 Rooms</option>
-                                <option value="3">3 Rooms</option>
-                                <option value="4">4 Rooms</option>
-                                <option value="5">5 Rooms</option>
+                                <option value="1" data-en="1 Room" data-te="1 గది">1 Room</option>
+                                <option value="2" data-en="2 Rooms" data-te="2 గదులు">2 Rooms</option>
+                                <option value="3" data-en="3 Rooms" data-te="3 గదులు">3 Rooms</option>
+                                <option value="4" data-en="4 Rooms" data-te="4 గదులు">4 Rooms</option>
+                                <option value="5" data-en="5 Rooms" data-te="5 గదులు">5 Rooms</option>
                             </select>
                         </div>
                         <div class="col-12 col-md-3">
-                            <label for="adults" class="form-label mb-1">Adults</label>
+                            <label for="adults" class="form-label mb-1" data-en="Adults" data-te="పెద్దలు">Adults</label>
                             <select class="form-select" id="adults">
-                                <option value="1">1 Adult</option>
-                                <option value="2">2 Adults</option>
-                                <option value="3">3 Adults</option>
-                                <option value="4">4 Adults</option>
-                                <option value="5">5 Adults</option>
-                                <option value="6">6 Adults</option>
+                                <option value="1" data-en="1 Adult" data-te="1 వయస్కుడు">1 Adult</option>
+                                <option value="2" data-en="2 Adults" data-te="2 వయస్కులు">2 Adults</option>
+                                <option value="3" data-en="3 Adults" data-te="3 వయస్కులు">3 Adults</option>
+                                <option value="4" data-en="4 Adults" data-te="4 వయస్కులు">4 Adults</option>
+                                <option value="5" data-en="5 Adults" data-te="5 వయస్కులు">5 Adults</option>
+                                <option value="6" data-en="6 Adults" data-te="6 వయస్కులు">6 Adults</option>
                             </select>
                         </div>
                     </div>
@@ -222,13 +218,13 @@
                     <!-- NIGHTS + TODAY / TOMORROW -->
                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
                         <div class="nights-text">
-                            <span id="nightCount">0</span> Night(s)
+                            <span id="nightCount">0</span> <span data-en="Night(s)" data-te="రాత్రులు">Night(s)</span>
                         </div>
                         <div class="btn-group quick-date-group">
-                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnToday">
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnToday" data-en="Today" data-te="ఈ రోజు">
                                 Today
                             </button>
-                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnTomorrow">
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnTomorrow" data-en="Tomorrow" data-te="రేపు">
                                 Tomorrow
                             </button>
                         </div>
@@ -236,16 +232,13 @@
 
                     <!-- SEARCH BUTTON CENTER -->
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-lg btn-search-main px-4">
-                            <i class="fa fa-search me-2"></i> Search
+                        <button type="submit" class="btn btn-lg btn-search-main px-4" data-en="Search" data-te="వెతకండి">
+                            <i class="fa fa-search me-2"></i> <span>Search</span>
                         </button>
-                        <!-- <button type="submit" class="btn btn-lg btn-search-main px-4 mt-2 mt-md-0">
-                            <i class="fa fa-phone me-2"></i> Call
-                        </button> -->
                         <button type="button"
         class="btn btn-lg btn-search-main px-4 mt-2 mt-md-0"
-        onclick="window.location.href='tel:+918223800215'">
-    <i class="fa fa-phone me-2"></i> Call
+        onclick="window.location.href='tel:+918223800215'" data-en="Call" data-te="కాల్ చేయండి">
+    <i class="fa fa-phone me-2"></i> <span>Call</span>
 </button>
 
                     </div>
@@ -336,8 +329,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
-
-
 
 <!--carosual area-->
 <!-- ========== FULL CUSTOM CAROUSEL + HOTEL CARD ========== -->
@@ -478,6 +469,15 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="image/1.jpeg" alt="">
         </div>
         <div class="hotel-slide">
+            <img src="image/101.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/102.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/103.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
             <img src="image/2.jpeg" alt="">
         </div>
         <div class="hotel-slide">
@@ -521,19 +521,19 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- HOTEL INFO -->
     <div class="hotel-info">
         <div class="container">
-        <div class="hotel-title">Hotel Vallabh Palace, Naimisharanya</div>
+        <div class="hotel-title" data-en="Hotel Vallabh Palace, Naimisharanya" data-te="హోటల్ వల్లభ్ పాలेస్, నైమిషారణ్య">Hotel Vallabh Palace, Naimisharanya</div>
 
         <div class="hotel-info-row">
 
             <!-- Location -->
             <div class="hotel-info-col">
                 <div class="hotel-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="hotel-text">
+                <div class="hotel-text" data-en="Hotel Vallabh Palace, Near Vyas Gaddi Mandir Road,&lt;br&gt;Naimisharanya, Uttar Pradesh, India 261402" data-te="హోటల్ వల్లభ్ పాలేస్, వ్యాస గద్ది మందిర్ సమీపం,&lt;br&gt;నైమిషారణ్య, ఉత్తర ప్రదేశ్, భారతదేశం 261402">
                     Hotel Vallabh Palace, Near Vyas Gaddi Mandir Road,<br>
                     Naimisharanya, Uttar Pradesh, India 261402
                 </div>
             </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
             <!-- Phone -->
             <div class="hotel-info-col">
                 <div class="hotel-icon"><i class="fa-solid fa-phone"></i></div>
@@ -608,12 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
-
-
 <!--CAROSUAL AREAS END-->
-
-
-
 
 <!--service design start-->
 
@@ -690,47 +685,47 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 <div class="container">
 <div class="amenities-box mt-3">
-    <h4 class="mb-4">Featured Amenities</h4>
+    <h4 class="mb-4" data-en="Featured Amenities" data-te="ఫీచర్‌డ్ సౌకర్యాలు">Featured Amenities</h4>
 
     <!-- Amenity Rows -->
     <div class="amenity-row">
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-elevator"></i></div>
-            <div>Elevator</div>
+            <div data-en="Elevator" data-te="ఎలివేటర్">Elevator</div>
         </div>
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div>
-            <div>High Speed Internet</div>
+            <div data-en="High Speed Internet" data-te="హై స్పీడ్ ఇంటర్నెట్">High Speed Internet</div>
         </div>
     </div>
 
     <div class="amenity-row">
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-            <div>In City Center</div>
+            <div data-en="In City Center" data-te="నగర కేంద్రంలో">In City Center</div>
         </div>
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-taxi"></i></div>
-            <div>Pick & Drop</div>
+            <div data-en="Pick & Drop" data-te="పికప్ & డ్రాప్">Pick & Drop</div>
         </div>
     </div>
 
     <div class="amenity-row">
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-gopuram"></i></div>
-            <div>Pravachan Hall</div>
+            <div data-en="Pravachan Hall" data-te="ప్రవచన హాల్">Pravachan Hall</div>
         </div>
         <div class="amenity-item">
             <div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div>
-            <div>Onsite Parking</div>
+            <div data-en="Onsite Parking" data-te="ఆన్‌సైట్ పార్కింగ్">Onsite Parking</div>
         </div>
     </div>
 
     <!-- Links -->
     <div class="amenity-links">
-        <span>All Amenities</span>
+        <span data-en="All Amenities" data-te="అన్ని సౌకర్యాలు">All Amenities</span>
         <span class="divider">|</span>
-        <span>Hotel Policies</span>
+        <span data-en="Hotel Policies" data-te="హోటల్ విధానాలు">Hotel Policies</span>
     </div>
 
     <div class="section-line"></div>
@@ -738,63 +733,45 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Check-in / Check-out -->
     <div class="check-box">
         <div class="check-item">
-            <div class="check-label center">CHECK IN</div>
+            <div class="check-label center" data-en="CHECK IN" data-te="చెక్-ఇన్">CHECK IN</div>
             <div class="check-value">12:00 pm</div>
         </div>
         <div class="check-item">
-            <div class="check-label ms-5">CHECK OUT</div>
+            <div class="check-label ms-5" data-en="CHECK OUT" data-te="చెక్-అవుట్">CHECK OUT</div>
             <div class="check-value">11:00 am</div>
         </div>
     </div>
 
 </div></div>
 
-
 <!--service design end-->
 
-        <!-- ================Banner Area ================= -->
-        <!-- <section class="banner_area">
-            <div class="booking_table d_flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h6>stepaway from the ordinary,</h6>
-						<h2>Hotel Vallabh Palace, Naimisharanya</h2>
-						<p>Hotel Vallabh Palace, Naimisharanya offers a perfect blend of luxury,<br> comfort, and tranquility.</p>
-						<a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Check Availability</a>
-					</div>
-				</div>
-            </div>
-           
-        </section> -->
-        <!--================Banner Area =================-->
-        
-        <!--================ Accomodation Area  =================-->
+ <!--================ Accommodation Section =================-->
         <section class=" section_gap" >
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color ">Hotel Vallabh Palace, Naimisharanya Accomodation</h2>
-                    <p >We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+                    <h2 class="title_color " data-en="Hotel Vallabh Palace, Naimisharanya Accommodation" data-te="హోటల్ వల్లభ్ పాలేస్, నైమిషారణ్య ఆతిథ్య">Hotel Vallabh Palace, Naimisharanya Accommodation</h2>
+                    <p data-en="We all live in an age that belongs to the young at heart. Life that is becoming extremely fast," data-te="మనమందరం యువజనుల కాలంలో జీవిస్తున్నాము. జీవితం చాలా వేగంగా మారుతున్నది,">We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
                 </div>
                 <div class="row mb_30">
                     <div class="col-lg-4 col-md-6" >
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
                                 <img src="image/999room.jpeg" alt="" height="270px">
-                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover" data-en="Book Now" data-te="ఇప్పుడు బుక్ చేయండి">Book Now</a>
                             </div>
-                            <a href="#"><h4 class="sec_h4">1 Twin Bed Room </h4></a>
-                            <h5 class="text-dark">Starts 1500<small> INR/night</small></h5>
+                            <a href="#"><h4 class="sec_h4" data-en="1 Twin Bed Room" data-te="1 ట్విన్ బెడ్ గది">1 Twin Bed Room </h4></a>
+                            <h5 class="text-dark"><span data-en="Starts 1500" data-te="1500 నుండి మొదలవుతుంది">Starts 1500</span><small data-en=" INR/night" data-te=" రూ./రాత్రి"> INR/night</small></h5>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
-                                <img src="image/1200room1.jpeg" alt="" height="270px" >
-                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                                <img src="image/99.jpeg" alt="" height="270px" >
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover" data-en="Book Now" data-te="ఇప్పుడు బుక్ చేయండి">Book Now</a>
                             </div>
-                            <a href="#"><h4 class="sec_h4 ">1 Deluxe Room</h4></a>
-                            <h5 class="text-dark" >Starts 1200<small> INR/night</small></h5>
+                            <a href="#"><h4 class="sec_h4 " data-en="1 Deluxe Room" data-te="1 డీలక్స్ గది">1 Deluxe Room</h4></a>
+                            <h5 class="text-dark" ><span data-en="Starts 1200" data-te="1200 నుండి మొదలవుతుంది">Starts 1200</span><small data-en=" INR/night" data-te=" రూ./రాత్రి"> INR/night</small></h5>
                         </div>
                     </div>
                     
@@ -802,80 +779,29 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="accomodation_item text-center">
                             <div class="hotel_img">
                                 <img src="image/6bed room.JPG" alt="" height="270px">
-                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover" data-en="Book Now" data-te="ఇప్పుడు బుక్ చేయండి">Book Now</a>
                             </div>
-                            <a href="#"><h4 class="sec_h4 ">Dormitory </h4></a>
-                            <h5 class="text-dark">Starts 500<small>/Person/night</small></h5>
+                            <a href="#"><h4 class="sec_h4 " data-en="Dormitory" data-te="డార్మిటరీ">Dormitory </h4></a>
+                            <h5 class="text-dark"><span data-en="Starts 500" data-te="500 నుండి మొదలవుతుంది">Starts 500</span><small data-en="/Person/night" data-te="/వ్యక్తి/రాత్రి">/Person/night</small></h5>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--================ Accomodation Area  =================-->
-        
-        <!--================ Facilities Area  =================-->
-        <!-- <section class="facilities_area section_gap">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
-            </div>
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_w">Prestigious Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
-                <div class="row mb_30">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Restaurant</h4>
-                            <p>Enjoy an unforgettable meal with impeccable service in a welcoming atmosphere.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Free Wifi</h4>
-                            <p>Enjoy seamless browsing with our fast and free Wi-Fi service, available throughout the Hotel.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Naimisharanya Darshan</h4>
-                            <p>Discover the divine temples and rich history of Naimisharanya with an unforgettable darshan experience.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Rent a Car</h4>
-                            <p> 
-                                Enjoy a hassle-free journey with our reliable car rental services, available at your convenience.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Laundry Service</h4>
-                            <p>Experience fast and efficient laundry services to keep your clothes fresh and clean.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4">Airport Taxi Service</h4>
-                            <p>Enjoy a comfortable and reliable ride to and from the airport with our efficient taxi service.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--================ Facilities Area  =================-->
-        
+        <!--================ Accommodation Area  =================-->
+
+
         <!--================ About History Area  =================-->
         <section class="about_history_area section_gap">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
-                            <p> Experience Comfort & Devotion Near Naimisharanya – The Best Executive Stay at Hotel Vallabh Palace
+                            <h2 class="title title_color" data-en="About Us &lt;br&gt;Our History&lt;br&gt;Mission & Vision" data-te="మా గురించి &lt;br&gt;మా చరిత్ర&lt;br&gt;మిషన్ & విజన్">About Us <br>Our History<br>Mission & Vision</h2>
+                            <p data-en="Experience Comfort & Devotion Near Naimisharanya – The Best Executive Stay at Hotel Vallabh Palace. Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of Naimisharanya. Designed to offer premium and comfortable accommodation, our hotel fills the long-felt need for high-quality executive and family-friendly rooms in this holy region. From the very beginning, our vision has been to create a peaceful, well-managed, and modern stay option for pilgrims and travelers. With dedicated staff, warm hospitality, and thoughtfully designed facilities, we ensure that every guest enjoys a relaxing, memorable, and spiritually enriched experience during their visit to Naimisharanya." data-te="నైమిషారణ్యకు సమీపంలో సుఖం & భక్తిని అనుభవించండి – హోటల్ వల్లభ్ పాలేస్‌లో 최佳 ఎగ్జిక్యూటివ్ స్టే. హోటల్ వల్లభ్ పాలేస్‌కు స్వాగతం, నైమిషారణ్య పవిత్ర భూమిలో ఒకటి. ఆధునిక మరియు సుఖకరమైన లక్ష విజయం మూలంగా మా హోటల్ ఈ పవిత్ర ప్రాంతంలో ఉన్నత-నాణ్యత అందించుకుంటుంది. సమ్మెళ్ల ఆరంభం నుండి, శాంతియైన, సు-నిర్వహిత మరియు ఆధునిక ఆతిథ్య ఎంపిక సృష్టించడం మా దృష్టిభంగం. అంకితమైన సిబ్బంది, ఖచ్చితమైన సేవ మరియు సుచింతితమైన సౌకర్యాలతో, నైమిషారణ్య సందర్శన సమయంలో ప్రతి అతిథి విశ్రాంతి, స్మరణీయ మరియు ఆధ్యాత్మికంగా సమృద్ధ అనుభవాన్ని పొందుతారని నిశ్చయం చేస్తాము.">Experience Comfort & Devotion Near Naimisharanya – The Best Executive Stay at Hotel Vallabh Palace
 
 Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of Naimisharanya. Designed to offer premium and comfortable accommodation, our hotel fills the long-felt need for high-quality executive and family-friendly rooms in this holy region. From the very beginning, our vision has been to create a peaceful, well-managed, and modern stay option for pilgrims and travelers. With dedicated staff, warm hospitality, and thoughtfully designed facilities, we ensure that every guest enjoys a relaxing, memorable, and spiritually enriched experience during their visit to Naimisharanya.</p>
-                            <a href="#" class="button_hover theme_btn_two">Get Price</a>
+                            <a href="#" class="button_hover theme_btn_two" data-en="Get Price" data-te="ధర పొందండి">Get Price</a>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -886,116 +812,13 @@ Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of N
         </section>
         <!--================ About History Area  =================-->
 
-
-
-        <!--================ taxi History Area  =================-->
-        <!-- <section class="about_history_area section_gap" style="background-color: whitesmoke;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="img-fluid" style="border-radius: 8px;" src="image/taximg.png"  alt="img">
-                    </div>
-                    
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">Reliable Taxi & Cab Service <br>– Travel with Ease</h2>
-                            <p>Need a hassle-free ride? Our Taxi/Cab Service ensures a comfortable and timely journey, whether you're heading to Mahakal Mandir, the railway station, airport, or any destination in Ujjain. Enjoy well-maintained vehicles, professional drivers, and 24/7 availability for a smooth travel experience.<br>
-                                    <br>
-                                📍 Safe, Affordable & Convenient <br>
-                                🚖 Instant Booking Available<br>
-                                
-                                Book now and travel stress-free! Call Now or Reserve Online.</p>
-                            <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="button_hover theme_btn_two">Book Now</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section> -->
-        <!--================ About History Area  =================-->
-
-
-
-
-
-
-
-        
-        <!-- ================ Testimonial Area  =================
-        <section class="testimonial_area section_gap">
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Testimonial from our Clients</h2>
-                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
-                </div>
-                <div class="testimonial_slider owl-carousel">
-                    <div class="media testimonial_item">
-                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                        <div class="media-body">
-                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
-                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
-                            <div class="star">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="media testimonial_item">
-                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                        <div class="media-body">
-                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
-                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
-                            <div class="star">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="media testimonial_item">
-                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                        <div class="media-body">
-                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
-                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
-                            <div class="star">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="media testimonial_item">
-                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                        <div class="media-body">
-                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
-                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
-                            <div class="star">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--================ Testimonial Area  =================-->
-        
+       
         <!--================ Latest Blog Area  =================-->
         <section class="latest_blog_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color">Top Attractions to Explore Near Our Hotel</h2>
-                    <p>Discover the Spiritual and Cultural Essence of NAIMISHARANYA – A City of Temples, Heritage, and Timeless Traditions</p>
+                    <h2 class="title_color" data-en="Top Attractions to Explore Near Our Hotel" data-te="మా హోటల్ సమీపంలో అన్వేషించాల్సిన టాప్ ఆకర్షణలు">Top Attractions to Explore Near Our Hotel</h2>
+                    <p data-en="Discover the Spiritual and Cultural Essence of NAIMISHARANYA – A City of Temples, Heritage, and Timeless Traditions" data-te="నైమిషారణ్య యొక్క ఆధ్యాత్మిక మరియు సాంస్కృతిక సారాన్ని కనుగొనండి – దేవాలయాల, సంHeritage, మరియు కాలాతీత परંপరల నగరం">Discover the Spiritual and Cultural Essence of NAIMISHARANYA – A City of Temples, Heritage, and Timeless Traditions</p>
                 </div>
                 <div class="row mb_30">
                     <div class="col-lg-4 col-md-6">
@@ -1005,8 +828,8 @@ Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of N
                                
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">🕉️ GOMTI NADI - THE RIVER OF LIBERATION 🕉️</h4></a>
-                                <p>The Gomti River flowing through Naimisharanya is one of India's most sacred and spiritually significant water bodies, revered as the earthly manifestation of divine grace and spiritual purification. Often referred to as the "Purifier of Sins," the Gomti holds a paramount place in Hindu spirituality and ancient scriptural traditions.</p>
+                                <a href="#"><h4 class="sec_h4" data-en="🕉️ GOMTI NADI - THE RIVER OF LIBERATION 🕉️" data-te="🕉️ గోమती నది - విముక్తి నది 🕉️">🕉️ GOMTI NADI - THE RIVER OF LIBERATION 🕉️</h4></a>
+                                <p data-en="The Gomti River flowing through Naimisharanya is one of India's most sacred and spiritually significant water bodies, revered as the earthly manifestation of divine grace and spiritual purification. Often referred to as the Purifier of Sins, the Gomti holds a paramount place in Hindu spirituality and ancient scriptural traditions." data-te="నైమిషారణ్య గుండా ప్రవహించే గోమతి నదీ భారతదేశంలో అత్యంత పవిత్ర మరియు ఆధ్యాత్మికంగా ముఖ్యమైన జల సంస్థలలో ఒకటి, ఇది దైవ కృప మరియు ఆధ్యాత్మిక శుద్ధీకరణ యొక్క భూలోక వ్యక్తీకరణగా గౌరవించబడుతుంది. తరచుగా 'పాపాల శుద్ధీకర్త' గా పిలువబడే గోమతి హిందూ ఆధ్యాత్మికత మరియు పురాతన గ్రంథ పరంపరలలో పరమ స్థానం కలిగి ఉంది.">The Gomti River flowing through Naimisharanya is one of India's most sacred and spiritually significant water bodies, revered as the earthly manifestation of divine grace and spiritual purification. Often referred to as the "Purifier of Sins," the Gomti holds a paramount place in Hindu spirituality and ancient scriptural traditions.</p>
                                 
                             </div>	
                         </div>
@@ -1018,9 +841,9 @@ Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of N
                             
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">🕉️ CHAKRAKUND - THE SACRED WHEEL OF SALVATION 🕉️</h4></a>
+                                <a href="#"><h4 class="sec_h4" data-en="🕉️ CHAKRAKUND - THE SACRED WHEEL OF SALVATION 🕉️" data-te="🕉️ చక్రకుండ - మోక్ష యొక్క పవిత్ర చక్రం 🕉️">🕉️ CHAKRAKUND - THE SACRED WHEEL OF SALVATION 🕉️</h4></a>
 
-The Chakrakund (also known as Chakra Tirtha) is one of the most revered and spiritually potent sacred tanks in Naimisharanya, 
+<p data-en="The Chakrakund (also known as Chakra Tirtha) is one of the most revered and spiritually potent sacred tanks in Naimisharanya, believed to be the divine manifestation of Lord Vishnu's celestial wheel (Sudarshan Chakra). This sacred pool is not merely a body of water but a concentrated vortex of divine energy where miracles of spiritual transformation occur daily. The circular formation of the tank itself is an earthly representation of the cosmic wheel of creation, maintenance, and dissolution." data-te="చక్రకుండ (చక్ర తీర్థ అని కూడా పిలుస్తారు) నైమిషారణ్యలో చాలా గౌరవప్రదమైన మరియు ఆధ్యాత్మికంగా శక్తివంతమైన పవిత్ర కుండలలో ఒకటి, ఇది భగవాన్ విష్ణువు యొక్క దేవతా చక్రం (సుదర్శన చక్రం) యొక్క దైవ వ్యక్తీకరణ అని విశ్వసించబడుతుంది. ఈ పవిత్ర సరస్సు కేవలం నీటి శరీరం కాదు, కానీ ప్రతిరోజూ ఆధ్యాత్మిక రూపాంతరణ యొక్క అద్భుతాలు సంభవించే దైవ శక్తి యొక్క కేంద్రీకృత ఘూర్ణం. కుండ యొక్క వృత్తాకార నిర్మాణం సృష్టి, నిర్వహణ మరియు విలయం యొక్క విశ్వవ్యాప్త చక్రం యొక్క భూలోక ప్రతినిధిత్వం.">The Chakrakund (also known as Chakra Tirtha) is one of the most revered and spiritually potent sacred tanks in Naimisharanya, 
 believed to be the divine manifestation of Lord Vishnu's celestial wheel (Sudarshan Chakra). This sacred pool is not merely a body 
 of water but a concentrated vortex of divine energy where miracles of spiritual transformation occur daily. The circular formation of 
 the tank itself is an earthly representation of the cosmic wheel of creation, maintenance, and dissolution.</p>
@@ -1035,8 +858,8 @@ the tank itself is an earthly representation of the cosmic wheel of creation, ma
                             
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">VYAS JI - THE SACRED MEDITATION CAVE OF NAIMISHARANYA 🕉️</h4></a>
-                                <p>Vyas Ji is the ancient sacred cave in Naimisharanya where Maharishi Vyasa, the legendary author of the Mahabharata and compiler of the 
+                                <a href="#"><h4 class="sec_h4" data-en="VYAS JI - THE SACRED MEDITATION CAVE OF NAIMISHARANYA 🕉️" data-te="వ్యాస జీ - నైమిషారణ్య యొక్క పవిత్ర ధ్యాన గుహ 🕉️">VYAS JI - THE SACRED MEDITATION CAVE OF NAIMISHARANYA 🕉️</h4></a>
+                                <p data-en="Vyas Ji is the ancient sacred cave in Naimisharanya where Maharishi Vyasa, the legendary author of the Mahabharata and compiler of the Vedas, meditated and composed his immortal spiritual works. This cave remains a powerful vortex of divine consciousness and eternal wisdom." data-te="వ్యాస జీ నైమిషారణ్యలో పురాతన పవిత్ర గుహ, ఇక్కడ మహర్షి వ్యాస, మహాభారత కర్త మరియు వేదాల సంకలనకారుడు, ధ్యానం చేసి తన అమరమైన ఆధ్యాత్మిక రచనలను రచించారు. ఈ గుహ దైవ చైతన్య మరియు శాశ్వత జ్ఞానం యొక్క శక్తివంతమైన కేంద్రంగా ఉంది.">Vyas Ji is the ancient sacred cave in Naimisharanya where Maharishi Vyasa, the legendary author of the Mahabharata and compiler of the 
 Vedas, meditated and composed his immortal spiritual works. This cave remains a powerful vortex of divine consciousness and eternal 
 wisdom.</p>
                                 
@@ -1050,8 +873,8 @@ wisdom.</p>
                             
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">🕉️ Dev Deshwar Mandir Naimisharanya – A Divine Spiritual Abode🕉️</h4></a>
-<p>Dev Deshwar Mandir in Naimisharanya is known for its sacred atmosphere, serene surroundings, and deep spiritual significance. Every visitor experiences peace, devotion, and positive energy here. The temple’s beautiful architecture and historical importance make it truly special.</p>
+                                <a href="#"><h4 class="sec_h4" data-en="🕉️ Dev Deshwar Mandir Naimisharanya – A Divine Spiritual Abode🕉️" data-te="🕉️ దేవ దేశ్వర్ మందిర్ నైమిషారణ్య – ఒక దైవ ఆధ్యాత్మిక నివాసస్థానం🕉️">🕉️ Dev Deshwar Mandir Naimisharanya – A Divine Spiritual Abode🕉️</h4></a>
+<p data-en="Dev Deshwar Mandir in Naimisharanya is known for its sacred atmosphere, serene surroundings, and deep spiritual significance. Every visitor experiences peace, devotion, and positive energy here. The temple's beautiful architecture and historical importance make it truly special." data-te="నైమిషారణ్యలో దేవ దేశ్వర్ మందిర్ దాని పవిత్ర వాతావరణం, శాంతియైన పరిసరాలు మరియు లోతైన ఆధ్యాత్మిక ప్రాముఖ్యత కోసం ప్రసిద్ధి చెందింది. ప్రతి సందర్శకుడు ఇక్కడ శాంతి, భక్తి మరియు సానుకూల శక్తిని అనుభవిస్తారు. ఆలయ యొక్క అందమైన ఆర్కిటెక్చర్ మరియు ఐతిహాసిక ప్రాధాన్యత దానిని నిజంగా ప్రత్యేకం చేస్తుంది.">Dev Deshwar Mandir in Naimisharanya is known for its sacred atmosphere, serene surroundings, and deep spiritual significance. Every visitor experiences peace, devotion, and positive energy here. The temple's beautiful architecture and historical importance make it truly special.</p>
                                 
                             </div>	
                         </div>
@@ -1063,8 +886,8 @@ wisdom.</p>
                             
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">Hanuman Garhi Naimisharanya – A Sacred Seat of Devotion and Strength 🕉️</h4></a>
-                                <p>Hanuman Garhi in Naimisharanya is a revered place where devotees feel immense peace and divine strength. The temple’s powerful spiritual aura, serene surroundings, and devotion to Lord Hanuman create a deeply uplifting experience. Its ancient significance makes it a cherished pilgrimage spot.</p>
+                                <a href="#"><h4 class="sec_h4" data-en="Hanuman Garhi Naimisharanya – A Sacred Seat of Devotion and Strength 🕉️" data-te="హనుమాన్ గర్హీ నైమిషారణ్య – భక్తి మరియు బలం యొక్క పవిత్ర సీటు 🕉️">Hanuman Garhi Naimisharanya – A Sacred Seat of Devotion and Strength 🕉️</h4></a>
+                                <p data-en="Hanuman Garhi in Naimisharanya is a revered place where devotees feel immense peace and divine strength. The temple's powerful spiritual aura, serene surroundings, and devotion to Lord Hanuman create a deeply uplifting experience. Its ancient significance makes it a cherished pilgrimage spot." data-te="నైమిషారణ్యలో హనుమాన్ గర్హీ ఒక గౌరవప్రదమైన స్థానం, ఇక్కడ భక్తులు అపారమైన శాంతి మరియు దైవ శక్తిని అనుభవిస్తారు. ఆలయ యొక్క శక్తివంతమైన ఆధ్యాత్మిక ఔరా, శాంతియైన పరిసరాలు మరియు భగవాన్ హనుమాన్‌కు భక్తి లోతైన ఉద్ధరణ అనుభవాన్ని సృష్టిస్తుంది. దాని పురాతన ప్రాధాన్యత దానిని ఒక ఆప్యాయమైన తీర్థయాత్ర స్థలం చేస్తుంది.">Hanuman Garhi in Naimisharanya is a revered place where devotees feel immense peace and divine strength. The temple's powerful spiritual aura, serene surroundings, and devotion to Lord Hanuman create a deeply uplifting experience. Its ancient significance makes it a cherished pilgrimage spot.</p>
                                 
                             </div>	
                         </div>
@@ -1076,9 +899,9 @@ wisdom.</p>
                             
                             <div class="details">
                                 
-                                <a href="#"><h4 class="sec_h4">🕉️Maa Lalita Devi Mandir Naimisharanya – A Holy Shrine of Divine Grace🕉️</h4></a>
+                                <a href="#"><h4 class="sec_h4" data-en="🕉️Maa Lalita Devi Mandir Naimisharanya – A Holy Shrine of Divine Grace🕉️" data-te="🕉️ మా లలిత దేవీ మందిర్ నైమిషారణ్య – దైవ కృప యొక్క పవిత్ర ఆలయం🕉️">🕉️Maa Lalita Devi Mandir Naimisharanya – A Holy Shrine of Divine Grace🕉️</h4></a>
 
-<p>Maa Lalita Devi Mandir in Naimisharanya is a sacred place where devotees feel the divine presence and blessings of the Goddess. The temple’s peaceful ambiance, spiritual energy, and ancient significance offer a deeply comforting experience, making it a cherished destination for pilgrims.</p>
+<p data-en="Maa Lalita Devi Mandir in Naimisharanya is a sacred place where devotees feel the divine presence and blessings of the Goddess. The temple's peaceful ambiance, spiritual energy, and ancient significance offer a deeply comforting experience, making it a cherished destination for pilgrims." data-te="నైమిషారణ్యలో మా లలిత దేవీ మందిర్ ఒక పవిత్ర స్థానం, ఇక్కడ భక్తులు దేవతా యొక్క దైవ సన్నిధి మరియు ఆశీర్వాదాన్ని అనుభవిస్తారు. ఆలయ యొక్క శాంతియైన వాతావరణం, ఆధ్యాత్మిక శక్తి మరియు పురాతన ప్రాధాన్యత లోతైన సుఖకరమైన అనుభవాన్ని అందిస్తుంది, ఇది తీర్థయాత్రులకు ఆప్యాయమైన గమ్యస్థానం చేస్తుంది.">Maa Lalita Devi Mandir in Naimisharanya is a sacred place where devotees feel the divine presence and blessings of the Goddess. The temple's peaceful ambiance, spiritual energy, and ancient significance offer a deeply comforting experience, making it a cherished destination for pilgrims.</p>
                                 
                             </div>	
                         </div>
@@ -1088,8 +911,6 @@ wisdom.</p>
                 
                 </div>
 
-
-                
             </div>
         </section>
         <!--================ Recent Area  =================-->
@@ -1100,118 +921,106 @@ wisdom.</p>
                 <div class="row">
                     <div class="col-lg-3  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">About Hotel Vallabh Palace, Naimisharanya</h6>
-                            <p> Welcome to one of the most luxurious hotels near the Vyas Gaddi temple</p>
+                            <h6 class="footer_title" data-en="About Hotel Vallabh Palace, Naimisharanya" data-te="హోటల్ వల్లభ్ పాలేస్, నైమిషారణ్య గురించి">About Hotel Vallabh Palace, Naimisharanya</h6>
+                            <p data-en="Welcome to one of the most luxurious hotels near the Vyas Gaddi temple" data-te="వ్యాస గద్ది ఆలయ సమీపంలో ఒకటి మంచి హోటల్‌కు స్వాగతం">Welcome to one of the most luxurious hotels near the Vyas Gaddi temple</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">Navigation Links</h6>
+                            <h6 class="footer_title" data-en="Navigation Links" data-te="నావిగేషన్ లింకులు">Navigation Links</h6>
                             <div class="row">
                                 <div class="col-4">
                                     <ul class="list_style">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Accomodation</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="index.html" data-en="Home" data-te="హోమ్">Home</a></li>
+                                        <li><a href="#" data-en="About us" data-te="మా గురించి">About us</a></li>
+                                        <li><a href="#" data-en="Accommodation" data-te="ఆతిథ్య">Accommodation</a></li>
+                                        <li><a href="#" data-en="Contact" data-te="సంప్రదించండి">Contact</a></li>
                                     </ul>
                                 </div>
-                                									
                             </div>							
                         </div>
                     </div>							
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- <div class="single-footer-widget">
-                            <h6 class="footer_title">Newsletter</h6>
-                            <p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>		
-                            <div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                    <div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-location"></span></button>		
-                                    </div>									
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- <div class="single-footer-widget instafeed">
-                            <h6 class="footer_title">InstaFeed</h6>
-                            <ul class="list_style instafeed d-flex flex-wrap">
-                                <li><img src="image/instagram/Image-01.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-02.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-03.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-04.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-05.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-06.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-07.jpg" alt=""></li>
-                                <li><img src="image/instagram/Image-08.jpg" alt=""></li>
-                            </ul>
-                        </div> -->
                     </div>						
                 </div>
                 <div class="border_line"></div>
                 <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://billzify.com" target="">Billzify</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    <!-- <div class="col-lg-4 col-sm-12 footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div> -->
+                    <p class="col-lg-8 col-sm-12 footer-text m-0" data-en="Copyright © All rights reserved | This template is made with by Billzify" data-te="కాపీరైట్ © సర్వాధికారాలు రక్షితమైనవి | ఈ టెంప్లేట్ బిల్‌జిఫై చేత తయారు చేయబడింది">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://billzify.com" target="">Billzify</a></p>
                 </div>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
-        
-        
-        
-        <!-- <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="btn btn-light chat-withusicon" style="height:55px;width:55px;border-radius:15px;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
-            <p style="font-size:28px; display:inline-block; animation:wave 1.5s infinite, zoom 1.5s infinite;">
-                <i class="fa fa-whatsapp text-success"></i>
 
-            </p>
-        </a>
-        
-        <a href="https://wa.me/message/2BS5P6OM4XR5H1" onclick="showchatnowbtn()" class="btn btn-light chat-withus" style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 90px; right: 20px; z-index: 999;">
-            Chat  !
-        </a> -->
-        
-        <style>
-            @keyframes wave {
-                0% { transform: rotate(0deg); }
-                50% { transform: rotate(15deg); }
-                100% { transform: rotate(0deg); }
-            }
-        
-            @keyframes zoom {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.2); }
-                100% { transform: scale(1); }
-            }
-        </style>
-        
+        <!-- Language Switch Script -->
         <script>
-        function showchatnowbtn() {
-            $('.chatnowdiv').fadeIn('slow').css('display', 'block');
-            $('.chat-withusicon').fadeOut('slow').css('display', 'none');
-            $('.chat-withus').fadeOut('slow').css('display', 'none');
-        }
-        
-        function hidechatnowbtn() {
-            $('.chatnowdiv').fadeOut('slow').css('display', 'none');
-            $('.chat-withusicon').fadeIn('slow').css('display', 'block');
-            $('.chat-withus').fadeIn('slow').css('display', 'block');
-        }
-        </script>
-        
+            // Translation Object
+            const translations = {
+                en: {},
+                te: {}
+            };
 
+            // Load translations on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                loadTranslations();
+                
+                // Check if there's a saved language preference
+                const savedLang = localStorage.getItem('siteLanguage') || 'en';
+                if (savedLang !== 'en') {
+                    switchLanguage(savedLang);
+                }
+            });
+
+            function loadTranslations() {
+                // Get all elements with data-en and data-te attributes
+                const elements = document.querySelectorAll('[data-en][data-te]');
+                
+                elements.forEach(el => {
+                    const enText = el.getAttribute('data-en');
+                    const teText = el.getAttribute('data-te');
+                    
+                    if (enText) translations.en[enText] = enText;
+                    if (teText) translations.te[enText] = teText;
+                });
+            }
+
+            function switchLanguage(lang) {
+                // Save the selected language
+                localStorage.setItem('siteLanguage', lang);
+
+                // Get all translatable elements
+                const elements = document.querySelectorAll('[data-en][data-te]');
+                
+                elements.forEach(el => {
+                    if (lang === 'en') {
+                        // Show English text
+                        const enText = el.getAttribute('data-en');
+                        if (enText.includes('<br>') || enText.includes('&lt;br&gt;')) {
+                            el.innerHTML = enText.replace(/&lt;br&gt;/g, '<br>');
+                        } else {
+                            el.textContent = enText;
+                        }
+                    } else if (lang === 'te') {
+                        // Show Telugu text
+                        const teText = el.getAttribute('data-te');
+                        if (teText.includes('<br>') || teText.includes('&lt;br&gt;')) {
+                            el.innerHTML = teText.replace(/&lt;br&gt;/g, '<br>');
+                        } else {
+                            el.textContent = teText;
+                        }
+                    }
+                });
+
+                // Update the language dropdown text
+                document.querySelector('.lang-text').textContent = lang === 'en' ? 'Language' : 'భాష';
+            }
+
+            // Make switchLanguage function globally available
+            window.switchLanguage = switchLanguage;
+        </script>
 
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -1220,7 +1029,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/mail-script.js"></script>
         <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
         <script src="vendors/nice-select/js/jquery.nice-select.js"></script>
-        <script src="js/mail-script.js"></script>
         <script src="js/stellar.js"></script>
         <script src="vendors/lightbox/simpleLightbox.min.js"></script>
         <script src="js/custom.js"></script>

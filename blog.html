@@ -4,8 +4,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="image/favicon.png" type="image/png">
-        <title>Royal Hotel</title>
+        <link rel="icon" href="image/Naimisharanya (3).png" type="image/png">
+        <title>Hotel Vallabh Palace, Naimisharanya</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -24,7 +24,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html"><img src="image/Logo.png" alt=""></a>
+                    <a class="navbar-brand logo_h m-1" href="index.html"><img src="image/Naimisharanya (3).png" height="80px" alt="">
+                    <img src="image/mainlogo1.png" height="80px" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -33,405 +34,1065 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+                            <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
                             <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                            <li class="nav-item submenu dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                </ul>
-                            </li> 
+                            <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li> -->
+                            <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
+                            
                             <!-- <li class="nav-item"><a class="nav-link" href="elements.html">Elemests</a></li> -->
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">langauge</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">English </a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Telugu</a></li>
+                                </ul>
+                            </li>  
                         </ul>
                     </div> 
                 </nav>
             </div>
         </header>
         <!--================Header Area =================-->
-        
+
+        <!-- SEARCH AVAILABILITY SECTION (FULL BLOCK) -->
+<style>
+    /* Laptop pe thoda upar, mobile pe mt-4 ok */
+    @media (min-width: 992px) {
+        .search-section {
+            margin-top: 1.5rem !important;
+        }
+    }
+
+    /* Card look: white box with nice shadow */
+    .search-card {
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        background: #ffffff;
+    }
+
+    /* CITY AREA UI */
+    .city-wrapper {
+        margin-bottom: 1.25rem;
+    }
+
+    .city-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .city-input {
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        padding: 0.65rem 1rem;
+        background: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    .city-icon {
+        color: #000;
+        font-size: 1rem;
+    }
+
+    .city-text {
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Inputs */
+    .form-control,
+    .form-select {
+        border-radius: 8px !important;
+        color: #000;
+    }
+
+    /* Nights text */
+    .nights-text,
+    #nightCount {
+        font-weight: 600;
+        color: #000 !important;
+    }
+
+    /* Quick date buttons */
+    .quick-date-group {
+        gap: 10px; /* Today / Tomorrow ke beech distance */
+    }
+
+    .quick-date-group .btn {
+        border-radius: 8px !important;
+        color: #000 !important;
+        border-color: #bbb;
+        background-color: #fff;
+    }
+
+    .quick-date-group .btn:hover {
+        background: #e9e9e9;
+    }
+
+    /* Black Search Button - center + clean */
+    .btn-search-main {
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        font-weight: 600;
+        border: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.7rem 2.7rem;
+    }
+
+    .btn-search-main:hover,
+    .btn-search-main:focus {
+        background: #111;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    }
+
+    @media (max-width: 767.98px) {
+        .btn-search-main {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="section_gap search-section">
+    <div class="container">
+        <div class="section_title">
+            <h2 class="title_color mt-4 ms-md-0">Search Availability</h2>
+        </div>
+
+        <div class="card shadow-sm border-0 search-card " style="margin-top: -45px;">
+            <div class="card-body">
+                <form id="availabilityForm">
+                    <!-- CITY / AREA -->
+                    <div class="city-wrapper mb-4">
+                        <label class="form-label city-label">City / Area</label>
+                        <div class="city-input">
+                            <i class="fa fa-map-marker-alt me-2 city-icon"></i>
+                            <span class="city-text">
+                                Naimisharanya, Vyas Gaddi Mandir
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- ONE LINE: CHECKIN, CHECKOUT, ROOMS, ADULTS -->
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12 col-md-3">
+                            <label for="checkinDate" class="form-label mb-1">Check-in</label>
+                            <input type="date" class="form-control" id="checkinDate">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="checkoutDate" class="form-label mb-1">Check-out</label>
+                            <input type="date" class="form-control" id="checkoutDate">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="rooms" class="form-label mb-1">Rooms</label>
+                            <select class="form-select" id="rooms">
+                                <option value="1">1 Room</option>
+                                <option value="2">2 Rooms</option>
+                                <option value="3">3 Rooms</option>
+                                <option value="4">4 Rooms</option>
+                                <option value="5">5 Rooms</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <label for="adults" class="form-label mb-1">Adults</label>
+                            <select class="form-select" id="adults">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5 Adults</option>
+                                <option value="6">6 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- NIGHTS + TODAY / TOMORROW -->
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
+                        <div class="nights-text">
+                            <span id="nightCount">0</span> Night(s)
+                        </div>
+                        <div class="btn-group quick-date-group">
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnToday">
+                                Today
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-primary" id="btnTomorrow">
+                                Tomorrow
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH BUTTON CENTER -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-lg btn-search-main px-4">
+                            <i class="fa fa-search me-2"></i> Search
+                        </button>
+                        <!-- <button type="submit" class="btn btn-lg btn-search-main px-4 mt-2 mt-md-0">
+                            <i class="fa fa-phone me-2"></i> Call
+                        </button> -->
+                        <button type="button"
+        class="btn btn-lg btn-search-main px-4 mt-2 mt-md-0"
+        onclick="window.location.href='tel:+918223800215'">
+    <i class="fa fa-phone me-2"></i> Call
+</button>
+
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const checkinInput  = document.getElementById("checkinDate");
+    const checkoutInput = document.getElementById("checkoutDate");
+    const nightCountEl  = document.getElementById("nightCount");
+    const btnToday      = document.getElementById("btnToday");
+    const btnTomorrow   = document.getElementById("btnTomorrow");
+
+    // helper: Date -> yyyy-mm-dd
+    function toInputDate(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}-${m}-${d}`;
+    }
+
+    function addDays(date, days) {
+        const d = new Date(date.getTime());
+        d.setDate(d.getDate() + days);
+        return d;
+    }
+
+    // min date = today
+    const today = new Date();
+    const minDate = toInputDate(today);
+    checkinInput.min  = minDate;
+    checkoutInput.min = minDate;
+
+    // nights calc
+    function updateNights() {
+        if (!checkinInput.value || !checkoutInput.value) {
+            nightCountEl.textContent = "0";
+            return;
+        }
+        const ci = new Date(checkinInput.value);
+        const co = new Date(checkoutInput.value);
+        const diffMs = co - ci;
+        const nights = diffMs / (1000 * 60 * 60 * 24);
+        nightCountEl.textContent = nights > 0 ? nights : 0;
+    }
+
+    // jase hi check-in dale, checkout auto +1 day
+    checkinInput.addEventListener("change", function () {
+        if (checkinInput.value) {
+            const ci = new Date(checkinInput.value);
+            const co = addDays(ci, 1);                 // always +1 day
+            checkoutInput.value = toInputDate(co);
+            checkoutInput.min   = checkinInput.value;  // cannot go backward
+        } else {
+            checkoutInput.value = "";
+            checkoutInput.min   = minDate;
+        }
+        updateNights();
+    });
+
+    checkoutInput.addEventListener("change", updateNights);
+
+    // TODAY: checkin = today, checkout = today+1
+    btnToday.addEventListener("click", function () {
+        const t1 = new Date();
+        const t2 = addDays(t1, 1);
+
+        checkinInput.value  = toInputDate(t1);
+        checkoutInput.value = toInputDate(t2);
+        checkoutInput.min   = checkinInput.value;
+        updateNights();
+    });
+
+    // TOMORROW: checkin = tomorrow, checkout = tomorrow+1
+    btnTomorrow.addEventListener("click", function () {
+        const t1 = addDays(new Date(), 1); // tomorrow
+        const t2 = addDays(t1, 1);         // day after tomorrow
+
+        checkinInput.value  = toInputDate(t1);
+        checkoutInput.value = toInputDate(t2);
+        checkoutInput.min   = checkinInput.value;
+        updateNights();
+    });
+});
+</script>
+
+
+
+<!--carosual area-->
+<!-- ========== FULL CUSTOM CAROUSEL + HOTEL CARD ========== -->
+
+<style>
+/* WRAPPER */
+.hotel-card {
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* CAROUSEL */
+.hotel-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.hotel-carousel img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 400px; /* DESKTOP HEIGHT */
+}
+
+/* MOBILE SMALLER HEIGHT */
+@media (max-width: 576px) {
+    .hotel-carousel img {
+        height: 260px;
+    }
+}
+
+/* Slides */
+.hotel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.hotel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Prev/Next Buttons */
+.hotel-carousel-prev,
+.hotel-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.hotel-carousel-prev { left: 10px; }
+.hotel-carousel-next { right: 10px; }
+
+/* Dots */
+.hotel-carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.hotel-carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.hotel-carousel-dots .dot.active {
+    background: #fff;
+}
+
+/* HOTEL INFO */
+.hotel-info {
+    background: #2f2f2f;
+    padding: 14px 16px;
+}
+
+.hotel-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* LOCATION + PHONE IN SAME ROW */
+.hotel-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Both columns EXACT 50% */
+.hotel-info-col {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Icons */
+.hotel-icon {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
+/* Text */
+.hotel-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+</style>
+
+<!-- ========== HTML ========== -->
+
+<div class="hotel-card">
+
+    <!-- CAROUSEL -->
+    <div class="hotel-carousel">
+        <div class="hotel-slide active">
+            <img src="image/1.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/2.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/6.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/9.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/3.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/4.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/5.jpeg" alt="">
+        </div>
+         <div class="hotel-slide">
+            <img src="image/8.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/10.jpeg" alt="">
+        </div>
+        <div class="hotel-slide">
+            <img src="image/11.jpeg" alt="">
+        </div>
+
+        <!-- Prev / Next -->
+        <div class="hotel-carousel-prev">&#10094;</div>
+        <div class="hotel-carousel-next">&#10095;</div>
+
+        <!-- Dots -->
+        <div class="hotel-carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+
+    
+    <!-- HOTEL INFO -->
+    <div class="hotel-info">
+        <div class="container">
+        <div class="hotel-title">Hotel Vallabh Palace, Naimisharanya</div>
+
+        <div class="hotel-info-row">
+
+            <!-- Location -->
+            <div class="hotel-info-col">
+                <div class="hotel-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="hotel-text">
+                    Hotel Vallabh Palace, Near Vyas Gaddi Mandir Road,<br>
+                    Naimisharanya, Uttar Pradesh, India 261402
+                </div>
+            </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+            <!-- Phone -->
+            <div class="hotel-info-col">
+                <div class="hotel-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="hotel-text">+91 8223800215</div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<!-- ========== JS ========== -->
+
+<script>
+(function() {
+    const slides = document.querySelectorAll('.hotel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.hotel-carousel-prev');
+    const nextBtn = document.querySelector('.hotel-carousel-next');
+
+    let currentIndex = 0;
+    let timer = null;
+    const interval = 3000;
+
+    function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === index));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
+    }
+
+    function prevSlideFn() {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        showSlide(newIndex);
+    }
+
+    function startAuto() {
+        stopAuto();
+        timer = setInterval(nextSlide, interval);
+    }
+
+    function stopAuto() {
+        if (timer) clearInterval(timer);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAuto();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlideFn();
+        startAuto();
+    });
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            showSlide(parseInt(this.getAttribute('data-index')));
+            startAuto();
+        });
+    });
+
+    showSlide(0);
+    startAuto();
+})();
+</script>
+
+
+
+<!--CAROSUAL AREAS END-->
+
+
+
+
+<!--service design start-->
+
+<style>
+.amenities-box {
+    background: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.amenity-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.amenity-item {
+    width: 48%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.amenity-icon {
+    font-size: 20px;
+}
+
+.amenity-links {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.amenity-links span {
+    color: #d4145a;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.amenity-links .divider {
+    color: #aaa;
+    margin: 0 14px;
+}
+
+/* Bottom line */
+.section-line {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Check-in/out */
+.check-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.check-item {
+    width: 48%;
+}
+
+.check-label {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.check-value {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+</style>
+<div class="container">
+<div class="amenities-box mt-3">
+    <h4 class="mb-4">Featured Amenities</h4>
+
+    <!-- Amenity Rows -->
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-elevator"></i></div>
+            <div>Elevator</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div>
+            <div>High Speed Internet</div>
+        </div>
+    </div>
+
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+            <div>In City Center</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-taxi"></i></div>
+            <div>Pick & Drop</div>
+        </div>
+    </div>
+
+    <div class="amenity-row">
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-gopuram"></i></div>
+            <div>Pravachan Hall</div>
+        </div>
+        <div class="amenity-item">
+            <div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div>
+            <div>Onsite Parking</div>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="amenity-links">
+        <span>All Amenities</span>
+        <span class="divider">|</span>
+        <span>Hotel Policies</span>
+    </div>
+
+    <div class="section-line"></div>
+
+    <!-- Check-in / Check-out -->
+    <div class="check-box">
+        <div class="check-item">
+            <div class="check-label center">CHECK IN</div>
+            <div class="check-value">12:00 pm</div>
+        </div>
+        <div class="check-item">
+            <div class="check-label ms-5">CHECK OUT</div>
+            <div class="check-value">11:00 am</div>
+        </div>
+    </div>
+
+</div></div>
+
+
+<!--service design end-->
+
+        <!-- ================Banner Area ================= -->
+        <!-- <section class="banner_area">
+            <div class="booking_table d_flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h6>stepaway from the ordinary,</h6>
+						<h2>Hotel Vallabh Palace, Naimisharanya</h2>
+						<p>Hotel Vallabh Palace, Naimisharanya offers a perfect blend of luxury,<br> comfort, and tranquility.</p>
+						<a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Check Availability</a>
+					</div>
+				</div>
+            </div>
+           
+        </section> -->
         <!--================Banner Area =================-->
-        <section class="banner_area blog_banner d_flex align-items-center">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        
+        <!--================ Accomodation Area  =================-->
+        <section class=" section_gap" >
             <div class="container">
-                <div class="banner_content text-center">
-                    <h4>Dude You’re Getting <br />a Telescope</h4>
-                    <p>There is a moment in the life of any aspiring astronomer that it is time to buy that first</p>
-                    <a href="#" class="btn white_btn button_hover">View More</a>
+                <div class="section_title text-center">
+                    <h2 class="title_color ">Hotel Vallabh Palace, Naimisharanya Accomodation</h2>
+                    <p >We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6" >
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/999room.jpeg" alt="" height="270px">
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <a href="#"><h4 class="sec_h4">1 Twin Bed Room </h4></a>
+                            <h5 class="text-dark">Starts 1500<small> INR/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/1200room1.jpeg" alt="" height="270px" >
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <a href="#"><h4 class="sec_h4 ">1 Deluxe Room</h4></a>
+                            <h5 class="text-dark" >Starts 1200<small> INR/night</small></h5>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="image/6bed room.JPG" alt="" height="270px">
+                                <a href="https://live.billzify.com/mobileview/H-pratikalpa/" class="btn theme_btn button_hover">Book Now</a>
+                            </div>
+                            <a href="#"><h4 class="sec_h4 ">Dormitory </h4></a>
+                            <h5 class="text-dark">Starts 500<small>/Person/night</small></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!--================Banner Area =================-->
+        <!--================ Accomodation Area  =================-->
         
-        <!--================Blog Categorie Area =================-->
-        <section class="blog_categorie_area">
+        <!--================ Facilities Area  =================-->
+        <!-- <section class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w">Prestigious Facilities</h2>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Restaurant</h4>
+                            <p>Enjoy an unforgettable meal with impeccable service in a welcoming atmosphere.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Free Wifi</h4>
+                            <p>Enjoy seamless browsing with our fast and free Wi-Fi service, available throughout the Hotel.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Naimisharanya Darshan</h4>
+                            <p>Discover the divine temples and rich history of Naimisharanya with an unforgettable darshan experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Rent a Car</h4>
+                            <p> 
+                                Enjoy a hassle-free journey with our reliable car rental services, available at your convenience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Laundry Service</h4>
+                            <p>Experience fast and efficient laundry services to keep your clothes fresh and clean.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4">Airport Taxi Service</h4>
+                            <p>Enjoy a comfortable and reliable ride to and from the airport with our efficient taxi service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!--================ Facilities Area  =================-->
+        
+        <!--================ About History Area  =================-->
+        <section class="about_history_area section_gap">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="image/blog/cat-post/cat-post-3.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-details.html"><h5>Social Life</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Enjoy your social life together</p>
-                                </div>
-                            </div>
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
+                            <p> Experience Comfort & Devotion Near Naimisharanya – The Best Executive Stay at Hotel Vallabh Palace
+
+Welcome to Hotel Vallabh Palace, one of the finest stays in the sacred land of Naimisharanya. Designed to offer premium and comfortable accommodation, our hotel fills the long-felt need for high-quality executive and family-friendly rooms in this holy region. From the very beginning, our vision has been to create a peaceful, well-managed, and modern stay option for pilgrims and travelers. With dedicated staff, warm hospitality, and thoughtfully designed facilities, we ensure that every guest enjoys a relaxing, memorable, and spiritually enriched experience during their visit to Naimisharanya.</p>
+                            <a href="#" class="button_hover theme_btn_two">Get Price</a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="image/blog/cat-post/cat-post-2.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-details.html"><h5>Politics</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Be a part of politics</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="image/blog/cat-post/cat-post-1.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="blog-details.html"><h5>Food</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Let the food be finished</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" style="border-radius: 8px;" src="image/fronimg.jpeg"  alt="img">
                     </div>
                 </div>
             </div>
         </section>
-        <!--================Blog Categorie Area =================-->
-        
-        <!--================Blog Area =================-->
-        <section class="blog_area">
+        <!--================ About History Area  =================-->
+
+
+
+        <!--================ taxi History Area  =================-->
+        <!-- <section class="about_history_area section_gap" style="background-color: whitesmoke;">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="blog_left_sidebar">
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <ul class="blog_meta list_style">
-                                            <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="image/blog/main-blog/m-blog-1.jpg" alt="">
-                                        <div class="blog_details">
-                                            <a href="#"><h2>Astronomy Binoculars A Great Alternative</h2></a>
-                                            <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="#" class="view_btn button_hover">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <ul class="blog_meta list_style">
-                                            <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="image/blog/main-blog/m-blog-2.jpg" alt="">
-                                        <div class="blog_details">
-                                            <a href="#"><h2>The Basics Of Buying A Telescope</h2></a>
-                                            <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="#" class="view_btn button_hover">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <ul class="blog_meta list_style">
-                                            <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="image/blog/main-blog/m-blog-3.jpg" alt="">
-                                        <div class="blog_details">
-                                            <a href="#"><h2>The Glossary Of Telescopes</h2></a>
-                                            <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="#" class="view_btn button_hover">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <ul class="blog_meta list_style">
-                                            <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="image/blog/main-blog/m-blog-4.jpg" alt="">
-                                        <div class="blog_details">
-                                            <a href="#"><h2>The Night Sky</h2></a>
-                                            <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="#" class="view_btn button_hover">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="row blog_item">
-                               <div class="col-md-3">
-                                   <div class="blog_info text-right">
-                                        <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
-                                        </div>
-                                        <ul class="blog_meta list_style">
-                                            <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                            <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                            <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                            <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
-                                <div class="col-md-9">
-                                    <div class="blog_post">
-                                        <img src="image/blog/main-blog/m-blog-5.jpg" alt="">
-                                        <div class="blog_details">
-                                            <a href="#"><h2>Telescopes 101</h2></a>
-                                            <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="#" class="view_btn button_hover">View More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <nav class="blog-pagination justify-content-center d-flex">
-		                        <ul class="pagination">
-		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Previous">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-left"></span>
-		                                    </span>
-		                                </a>
-		                            </li>
-		                            <li class="page-item"><a href="#" class="page-link">01</a></li>
-		                            <li class="page-item active"><a href="#" class="page-link">02</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">03</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">04</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">09</a></li>
-		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Next">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-right"></span>
-		                                    </span>
-		                                </a>
-		                            </li>
-		                        </ul>
-		                    </nav>
+                    <div class="col-md-6">
+                        <img class="img-fluid" style="border-radius: 8px;" src="image/taximg.png"  alt="img">
+                    </div>
+                    
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color">Reliable Taxi & Cab Service <br>– Travel with Ease</h2>
+                            <p>Need a hassle-free ride? Our Taxi/Cab Service ensures a comfortable and timely journey, whether you're heading to Mahakal Mandir, the railway station, airport, or any destination in Ujjain. Enjoy well-maintained vehicles, professional drivers, and 24/7 availability for a smooth travel experience.<br>
+                                    <br>
+                                📍 Safe, Affordable & Convenient <br>
+                                🚖 Instant Booking Available<br>
+                                
+                                Book now and travel stress-free! Call Now or Reserve Online.</p>
+                            <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="button_hover theme_btn_two">Book Now</a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="blog_right_sidebar">
-                            <aside class="single_sidebar_widget search_widget">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Posts">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
-                                    </span>
-                                </div><!-- /input-group -->
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget author_widget">
-                                <img class="author_img rounded-circle" src="image/blog/author.png" alt="">
-                                <h4>Charlie Barber</h4>
-                                <p>Senior blog writer</p>
-                                <div class="social_icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                </div>
-                                <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title">Popular Posts</h3>
-                                <div class="media post_item">
-                                    <img src="image/blog/post1.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Space The Final Frontier</h3></a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="image/blog/post2.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>The Amazing Hubble</h3></a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="image/blog/post3.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Astronomy Or Astrology</h3></a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="image/blog/post4.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Asteroids telescope</h3></a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget ads_widget">
-                                <a href="#"><img class="img-fluid" src="image/blog/add.jpg" alt=""></a>
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title">Post Catgories</h4>
-                                <ul class="list_style cat-list">
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Technology</p>
-                                            <p>37</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Lifestyle</p>
-                                            <p>24</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Fashion</p>
-                                            <p>59</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Art</p>
-                                            <p>29</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Food</p>
-                                            <p>15</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Architecture</p>
-                                            <p>09</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Adventure</p>
-                                            <p>44</p>
-                                        </a>
-                                    </li>															
-                                </ul>
-                                <div class="br"></div>
-                            </aside>
-                            <aside class="single-sidebar-widget newsletter_widget">
-                                <h4 class="widget_title">Newsletter</h4>
-                                <p>
-                                Here, I focus on a range of items and features that we use in life without
-                                giving them a second thought.
-                                </p>
-                                <div class="form-group d-flex flex-row">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                                        </div>
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
-                                    </div>
-                                    <a href="#" class="bbtns">Subcribe</a>
-                                </div>	
-                                <p class="text-bottom">You can unsubscribe at any time</p>	
-                                <div class="br"></div>							
-                            </aside>
-                            <aside class="single-sidebar-widget tag_cloud_widget">
-                                <h4 class="widget_title">Tag Clouds</h4>
-                                <ul class="list_style">
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Architecture</a></li>
-                                    <li><a href="#">Fashion</a></li>
-                                    <li><a href="#">Food</a></li>
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Art</a></li>
-                                    <li><a href="#">Adventure</a></li>
-                                    <li><a href="#">Food</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Adventure</a></li>
-                                </ul>
-                            </aside>
+                    
+                </div>
+            </div>
+        </section> -->
+        <!--================ About History Area  =================-->
+
+
+
+
+
+
+
+        
+        <!-- ================ Testimonial Area  =================
+        <section class="testimonial_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Testimonial from our Clients</h2>
+                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
+                </div>
+                <div class="testimonial_slider owl-carousel">
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================Blog Area =================-->
+        </section> -->
+        <!--================ Testimonial Area  =================-->
         
+        <!--================ Latest Blog Area  =================-->
+        <section class="latest_blog_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Top Attractions to Explore Near Our Hotel</h2>
+                    <p>Discover the Spiritual and Cultural Essence of NAIMISHARANYA – A City of Temples, Heritage, and Timeless Traditions</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="">
+                            
+                               <img class="" src="image/gomti nadi.jpeg" alt="post" height="250px" width="100%" style="border-radius: 18px;">
+                               
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">🕉️ GOMTI NADI - THE RIVER OF LIBERATION 🕉️</h4></a>
+                                <p>The Gomti River flowing through Naimisharanya is one of India's most sacred and spiritually significant water bodies, revered as the earthly manifestation of divine grace and spiritual purification. Often referred to as the "Purifier of Sins," the Gomti holds a paramount place in Hindu spirituality and ancient scriptural traditions.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="">
+                            
+                                <img class="" src="image/chkr.jpeg" alt="post" height="250px" width="100%" style="border-radius: 18px;">
+                            
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">🕉️ CHAKRAKUND - THE SACRED WHEEL OF SALVATION 🕉️</h4></a>
+
+The Chakrakund (also known as Chakra Tirtha) is one of the most revered and spiritually potent sacred tanks in Naimisharanya, 
+believed to be the divine manifestation of Lord Vishnu's celestial wheel (Sudarshan Chakra). This sacred pool is not merely a body 
+of water but a concentrated vortex of divine energy where miracles of spiritual transformation occur daily. The circular formation of 
+the tank itself is an earthly representation of the cosmic wheel of creation, maintenance, and dissolution.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="">
+                            
+                                <img class="" src="image/vyasji.jpeg" alt="post" height="250px" width="100%" style="border-radius: 18px;">
+                            
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">VYAS JI - THE SACRED MEDITATION CAVE OF NAIMISHARANYA 🕉️</h4></a>
+                                <p>Vyas Ji is the ancient sacred cave in Naimisharanya where Maharishi Vyasa, the legendary author of the Mahabharata and compiler of the 
+Vedas, meditated and composed his immortal spiritual works. This cave remains a powerful vortex of divine consciousness and eternal 
+wisdom.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="">
+                            
+                                <img class="" src="image/dev.jpeg" alt="post" height="250px" width="100%" style="border-radius: 18px;">
+                            
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">🕉️ Dev Deshwar Mandir Naimisharanya – A Divine Spiritual Abode🕉️</h4></a>
+<p>Dev Deshwar Mandir in Naimisharanya is known for its sacred atmosphere, serene surroundings, and deep spiritual significance. Every visitor experiences peace, devotion, and positive energy here. The temple’s beautiful architecture and historical importance make it truly special.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="">
+                            
+                                <img class="" src="image/hanuman gari.jpeg" alt="post" height="250px" width="" style="border-radius: 18px;"><img class="" src="image/hanuman gari.jpeg" alt="post" height="250px" width="" style="border-radius: 18px;margin-left:50px;">
+                            
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">Hanuman Garhi Naimisharanya – A Sacred Seat of Devotion and Strength 🕉️</h4></a>
+                                <p>Hanuman Garhi in Naimisharanya is a revered place where devotees feel immense peace and divine strength. The temple’s powerful spiritual aura, serene surroundings, and devotion to Lord Hanuman create a deeply uplifting experience. Its ancient significance makes it a cherished pilgrimage spot.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                     <div class="col-lg-4 col-md-6 ">
+                        <div class="">
+                            
+                                <img class="" src="image/Naimisharanya-maa-lalita-devi.jpg" alt="post" height="250px" width="100%" style="border-radius: 18px;">
+                            
+                            <div class="details">
+                                
+                                <a href="#"><h4 class="sec_h4">🕉️Maa Lalita Devi Mandir Naimisharanya – A Holy Shrine of Divine Grace🕉️</h4></a>
+
+<p>Maa Lalita Devi Mandir in Naimisharanya is a sacred place where devotees feel the divine presence and blessings of the Goddess. The temple’s peaceful ambiance, spiritual energy, and ancient significance offer a deeply comforting experience, making it a cherished destination for pilgrims.</p>
+                                
+                            </div>	
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                </div>
+
+
+                
+            </div>
+        </section>
+        <!--================ Recent Area  =================-->
         
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
@@ -439,8 +1100,8 @@
                 <div class="row">
                     <div class="col-lg-3  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">About Agency</h6>
-                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+                            <h6 class="footer_title">About Hotel Vallabh Palace, Naimisharanya</h6>
+                            <p> Welcome to one of the most luxurious hotels near the Vyas Gaddi temple</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -449,25 +1110,18 @@
                             <div class="row">
                                 <div class="col-4">
                                     <ul class="list_style">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Feature</a></li>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="#">Portfolio</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-4">
-                                    <ul class="list_style">
-                                        <li><a href="#">Team</a></li>
-                                        <li><a href="#">Pricing</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Accomodation</a></li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
-                                </div>										
+                                </div>
+                                									
                             </div>							
                         </div>
                     </div>							
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
+                        <!-- <div class="single-footer-widget">
                             <h6 class="footer_title">Newsletter</h6>
                             <p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>		
                             <div id="mc_embed_signup">
@@ -479,10 +1133,10 @@
                                     <div class="mt-10 info"></div>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-footer-widget instafeed">
+                        <!-- <div class="single-footer-widget instafeed">
                             <h6 class="footer_title">InstaFeed</h6>
                             <ul class="list_style instafeed d-flex flex-wrap">
                                 <li><img src="image/instagram/Image-01.jpg" alt=""></li>
@@ -494,26 +1148,68 @@
                                 <li><img src="image/instagram/Image-07.jpg" alt=""></li>
                                 <li><img src="image/instagram/Image-08.jpg" alt=""></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>						
                 </div>
                 <div class="border_line"></div>
                 <div class="row footer-bottom d-flex justify-content-between align-items-center">
                     <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://billzify.com" target="">Billzify</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    <div class="col-lg-4 col-sm-12 footer-social">
+                    <!-- <div class="col-lg-4 col-sm-12 footer-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
         
         
+        
+        <!-- <a href="https://wa.me/message/2BS5P6OM4XR5H1" class="btn btn-light chat-withusicon" style="height:55px;width:55px;border-radius:15px;box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+            <p style="font-size:28px; display:inline-block; animation:wave 1.5s infinite, zoom 1.5s infinite;">
+                <i class="fa fa-whatsapp text-success"></i>
+
+            </p>
+        </a>
+        
+        <a href="https://wa.me/message/2BS5P6OM4XR5H1" onclick="showchatnowbtn()" class="btn btn-light chat-withus" style="box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; position: fixed; bottom: 90px; right: 20px; z-index: 999;">
+            Chat  !
+        </a> -->
+        
+        <style>
+            @keyframes wave {
+                0% { transform: rotate(0deg); }
+                50% { transform: rotate(15deg); }
+                100% { transform: rotate(0deg); }
+            }
+        
+            @keyframes zoom {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+                100% { transform: scale(1); }
+            }
+        </style>
+        
+        <script>
+        function showchatnowbtn() {
+            $('.chatnowdiv').fadeIn('slow').css('display', 'block');
+            $('.chat-withusicon').fadeOut('slow').css('display', 'none');
+            $('.chat-withus').fadeOut('slow').css('display', 'none');
+        }
+        
+        function hidechatnowbtn() {
+            $('.chatnowdiv').fadeOut('slow').css('display', 'none');
+            $('.chat-withusicon').fadeIn('slow').css('display', 'block');
+            $('.chat-withus').fadeIn('slow').css('display', 'block');
+        }
+        </script>
+        
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.2.1.min.js"></script>
